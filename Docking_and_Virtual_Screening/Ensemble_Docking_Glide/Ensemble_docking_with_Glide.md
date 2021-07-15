@@ -17,13 +17,13 @@ Please navegate to the folder where your MDs files are (you need the *simulation
 ```bash
 mkdir 2_frames_AChE_4EY6
 cd 2_frames_AChE_4EY6
-$SCHRODINGER/run trj2mae.py ../*-out.cms ../*_trj/ AChE_4EY6 -s 300:1000:7 -extract-asl protein -align-asl backbone -separate -out-format PDB
+$SCHRODINGER/run trj2mae.py ../*-out.cms ../*_trj AChE_4EY6 -s 300:1000:7 -extract-asl protein -align-asl backbone -separate -out-format PDB
 cd ..
 ```
 
 The ouput PDBs files must be written at the *2_frames_AChE_4EY6* folder, and start from *AChE_4EY6_0.pdb* to *AChE_4EY6_99.pdb*. 
 
-## 3. Alignmet of the target structures ## 
+## 3. Alignment of the target structures ## 
 All the extracted structures must to be aligned to a reference target structure to ensure that the docking results all fall into the same binding site coordinates. Here we use the original protein we used to set the MD (*reference_AChE-4EY6.pdb*) to align all the extracted target PDBs (which is located into the *2_frames_AChE_4EY6* folder, and the utility *structalign* from Maestro (avalilable with your Desmond instalation). To see the help menu of the utility *structalign* use:
 > $SCHRODINGER/utilities/structalign -h
 
